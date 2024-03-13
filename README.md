@@ -27,7 +27,8 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
-
+git clone https://github.com/todo.git
+cd todo
 ```bash
 $ npm install
 ```
@@ -44,10 +45,40 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+Database Configuration:
+TypeOrmModule.forRoot({
+  type: 'mysql',
+  host: 'localhost',
+  port: 3306,
+  username: 'your_username',
+  password: 'your_password',
+  database: 'todo_db',
+  entities: [__dirname + '/**/*.entity{.ts,.js}'],
+  synchronize: true, // WARNING: Don't use this in production
+}),
+
+##API Endpoints:
+Retrieve all todos: GET /todos
+Create a new todo: POST /todos
+Update an existing todo: PUT /todos/:id
+Delete a todo: DELETE /todos/:id
 
 ## Test
 
 ```bash
+Create a new todo:
+POST http://localhost:3000/todos
+Body: { "title": "Buy groceries", "description": "Milk, eggs, bread", "completed": false }
+
+Retrieve all todos:
+GET http://localhost:3000/todos
+
+Update an existing todo:
+PUT http://localhost:3000/todos/1
+Body: { "title": "Buy groceries", "description": "Milk, eggs, bread", "completed": true }
+
+Delete a todo:
+DELETE http://localhost:3000/todos/1
 # unit tests
 $ npm run test
 
@@ -63,11 +94,10 @@ $ npm run test:cov
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
+Author
+Haile Adugna
+Email: haile.adugna@a2sv.org
+Feel free to customize this README according to your project specifics. Happy coding! 🚀
 ## License
 
 Nest is [MIT licensed](LICENSE).
