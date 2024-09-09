@@ -68,14 +68,12 @@ Delete a todo: DELETE /todos/:id
 ```bash
 Create a new todo:
 POST http://localhost:3000/todos
-Body: { "title": "Buy groceries", "description": "Milk, eggs, bread", "completed": false }
 
 Retrieve all todos:
 GET http://localhost:3000/todos
 
 Update an existing todo:
 PUT http://localhost:3000/todos/1
-Body: { "title": "Buy groceries", "description": "Milk, eggs, bread", "completed": true }
 
 Delete a todo:
 DELETE http://localhost:3000/todos/1
